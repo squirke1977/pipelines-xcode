@@ -10,7 +10,10 @@ steps:
 - script: |
     git clone https://github.com/squirke1977/munki-pkg.git
   displayName: 'Install Munki-Pkg - Hello World!'
-
+  
+- script: |
+    cd munki-pkg
+    ./munkipkg TurnOffBluetooth/
 
 #- task: Xcode@5
 #  inputs:
