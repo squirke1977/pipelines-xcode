@@ -7,9 +7,14 @@ pool:
   vmImage: 'macOS 10.13'
 
 steps:
-- task: Xcode@5
-  inputs:
-    scheme: ''
-    sdk: 'iphoneos'
-    configuration: 'Release'
-    xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
+- script: |
+    git clone https://github.com/squirke1977/munki-pkg.git
+  displayName: 'Install Munki-Pkg - Hello World!'
+
+
+#- task: Xcode@5
+#  inputs:
+#    scheme: ''
+#    sdk: 'iphoneos'
+#    configuration: 'Release'
+#    xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
