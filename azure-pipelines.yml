@@ -20,12 +20,12 @@ steps:
 - script: |
     cd munki-pkg
     ./munkipkg TurnOffBluetooth/
-   displayName: 'Actually building a package!'
+  displayName: 'Actually building a package!'
    
 - script: |
     cd munki-pkg
     ./munkipkg SuppressSetupAssistant/
-   displayName: 'Actually building another package!'
+  displayName: 'Actually building another package!'
 
 
 #- task: Xcode@5
