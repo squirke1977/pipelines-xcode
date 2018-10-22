@@ -8,6 +8,13 @@ pool:
 
 steps:
 - script: |
+    python -m pip install --upgrade pip setuptools wheel django
+    pip install -r requirements.txt
+    pip install unittest-xml-reporting
+    pip install awscli
+  displayName: 'Install prerequisites including AWS tools'
+  
+- script: |
     git clone https://github.com/squirke1977/munki-pkg.git
   displayName: 'Install Munki-Pkg - Hello World!'
   
