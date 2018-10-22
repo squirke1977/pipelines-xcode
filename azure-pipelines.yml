@@ -8,9 +8,7 @@ pool:
 
 steps:
 - script: |
-    python -m pip install --upgrade pip setuptools wheel django
-    pip install -r requirements.txt
-    pip install unittest-xml-reporting
+    python -m pip install --upgrade pip
     pip install awscli
   displayName: 'Install prerequisites including AWS tools'
   
@@ -21,6 +19,13 @@ steps:
 - script: |
     cd munki-pkg
     ./munkipkg TurnOffBluetooth/
+   displayName: 'Actually building a package!'
+   
+- script: |
+    cd munki-pkg
+    ./munkipkg SuppressSetupAssistant/
+   displayName: 'Actually building another package!'
+
 
 #- task: Xcode@5
 #  inputs:
