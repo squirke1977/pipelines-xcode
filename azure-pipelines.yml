@@ -13,7 +13,7 @@ steps:
     git clone https://github.com/squirke1977/munki-pkg.git
   displayName: 'Install prerequisites including AWS tools'
   
- - script: |
+- script: |
      git clone https://github.com/ThoughtWorks-Identity/installapplications
   displayName: 'Grab TW InstallApplications'
   
