@@ -7,6 +7,14 @@ pool:
   vmImage: 'macOS 10.13'
 
 steps:
+- task: InstallAppleCertificate@2
+  displayName: 'Install an Apple certificate'
+  inputs:
+    certSecureFile: '89bf55f0-0586-4fb7-83bd-1d5d98c55dae'
+
+    certPwd: '$(signing_key)'
+
+  enabled: false
 - script: |
     python -m pip install --upgrade pip
     pip install awscli
