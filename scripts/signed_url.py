@@ -18,4 +18,4 @@ packages_bucket = s3Resource.Bucket(bucket)
 
 for item in packages_bucket.objects.all():
      print item.key
-    print(s3Client.generate_presigned_url('get_object', Params = {'Bucket': bucket, 'Key': item.key}, ExpiresIn = expiry))
+     print(s3Client.generate_presigned_url('get_object', Params = {'Bucket': bucket, 'Key': item.key}, ExpiresIn = expiry))
