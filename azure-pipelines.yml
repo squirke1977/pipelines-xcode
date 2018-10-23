@@ -7,6 +7,13 @@ pool:
   vmImage: 'macOS 10.13'
 
 steps:
+- script: |
+    python -m pip install --upgrade pip
+    pip install awscli
+    pip install requests
+    git clone https://github.com/squirke1977/munki-pkg.git
+  displayName: 'Install prerequisites including AWS tools'
+
 - task: InstallAppleCertificate@2
   displayName: 'Install an Apple certificate'
   inputs:
@@ -15,12 +22,6 @@ steps:
     certPwd: '$(signing_key)'
 
   enabled: false
-- script: |
-    python -m pip install --upgrade pip
-    pip install awscli
-    pip install requests
-    git clone https://github.com/squirke1977/munki-pkg.git
-  displayName: 'Install prerequisites including AWS tools'
 
 - script: |
      git clone https://github.com/ThoughtWorks-Identity/installapplications
