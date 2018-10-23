@@ -17,7 +17,7 @@ steps:
 - task: InstallAppleCertificate@2
   displayName: 'Install an Apple certificate'
   inputs:
-    certSecureFile: 'test_azure_cert.p12'
+    certSecureFile: 'test_azure_cert'
 
     certPwd: '$(signing_key)'
 
