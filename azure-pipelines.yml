@@ -13,20 +13,20 @@ steps:
     pip install requests
     git clone https://github.com/squirke1977/munki-pkg.git
   displayName: 'Install prerequisites including AWS tools'
-  
+
 - script: |
      git clone https://github.com/ThoughtWorks-Identity/installapplications
   displayName: 'Grab TW InstallApplications'
-  
+
 - script: |
-    cd munki-pkg
-    ./munkipkg TurnOffBluetooth/
-  displayName: 'Actually building a package!'
-   
-- script: |
-    cd munki-pkg
-    ./munkipkg SuppressSetupAssistant/
-  displayName: 'Actually building another package!'
+    ./munki-pkg/munkipkg installapplications
+  displayName: 'Build TW InstallApplications'
+
+#- script: |
+#    cd munki-pkg
+#    ./munkipkg TurnOffBluetooth/
+#  displayName: 'Actually building a package!'
+
 
 
 #- task: Xcode@5
