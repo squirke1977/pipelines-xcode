@@ -21,8 +21,6 @@ steps:
 
     certPwd: '$(signing_key)'
 
-  enabled: false
-
 - script: |
      git clone https://github.com/ThoughtWorks-Identity/installapplications
   displayName: 'Grab TW InstallApplications'
