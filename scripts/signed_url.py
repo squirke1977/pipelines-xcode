@@ -3,7 +3,7 @@
 import jinja2
 import os
 
-build_dir = os.environ.get("Agent.BuildDirectory")
+build_dir = os.environ.get("AGENT_BUILDDIRECTORY")
 
 print(build_dir)
 
