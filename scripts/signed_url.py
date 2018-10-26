@@ -15,6 +15,7 @@ print(working_directory)
 what = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 working_directory = what + "/installapplications/"
+output_directory = what + "/installapplications/payload/Library/LaunchDaemons/"
 
 
 print(working_directory)
