@@ -29,7 +29,7 @@ filename = output_directory + "com.erikng.installapplications.plist"
 
 print(filename)
 
-outputfile = open(filename, 'w')
+outputfile = open(filename, 'w+')
 complete = template.render({"bootstrap_url":os.environ.get("SIGNED_URL")})
 outputfile.write(complete)
 outputfile.close()
