@@ -34,6 +34,6 @@ filename = output_directory + "com.erikng.installapplications.plist"
 print(filename)
 
 outputfile = open(filename, 'w+')
-complete = template.render({"bootstrap_url":os.environ.get("SIGNED_URL")})
+complete = template.render({"bootstrap_file_url":os.environ.get("SIGNED_URL")})
 outputfile.write(complete)
 outputfile.close()
