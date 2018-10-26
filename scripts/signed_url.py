@@ -11,7 +11,7 @@ working_directory = build_dir + "/installapplications"
 output_directory = build_dir + "/installapplications/payload/Library/LaunchDaemons/"
 
 env = Environment(loader=FileSystemLoader(working_directory))
-template = env.get_template(com.erikng.installapplications.template")
+template = env.get_template("com.erikng.installapplications.template")
 
 
 #templateLoader = jinja2.FileSystemLoader(searchpath=working_directory)
