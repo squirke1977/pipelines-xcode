@@ -5,6 +5,8 @@ import os
 
 build_dir = os.environ.get("Agent.BuildDirectory")
 
+print(build_dir)
+
 working_directory = build_dir + "/installapplications/"
 output_directory = build_dir + "/installapplications/payload/Library/LaunchDaemons/"
 
