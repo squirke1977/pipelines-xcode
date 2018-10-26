@@ -1,21 +1,19 @@
 #!/usr/bin/python
 
-import boto3
+import jinja2
+import os
 
+build_dir = os.environ.get("Agent.BuildDirectory")
 
-s3Client = boto3.client('s3')
-s3Resource = boto3.resource('s3')
+working_directory = build_dir + "/installapplications/"
+output_directory = build_dir + "/installapplications/payload/Library/LaunchDaemons/"
 
-bucket = "tw-dep-installapplications-test"
-#Expiry time is in seconds - 2592000 is 30 days
-#expiry = 2592000
-#Going for 3 months (ish)
-expiry = 7776000
+templateLoader = jinja2.FileSystemLoader(searchpath=working_directory)
+templateEnv = jinja2.Environment(loader=templateLoader)
+template = templateEnv.get_template("com.erikng.installapplications.template")
+filename = output_directory + "com.erikng.installapplications.plist"
 
-packages_bucket = s3Resource.Bucket(bucket)
-
-
-
-for item in packages_bucket.objects.all():
-     print item.key
-     print(s3Client.generate_presigned_url('get_object', Params = {'Bucket': bucket, 'Key': item.key}, ExpiresIn = expiry))
+outputfile = open(filename, 'w')
+complete = template.render({"bootstrap_url":os.environ.get("SIGNED_URL")})
+outputfile.write(complete)
+outputfile.close()
