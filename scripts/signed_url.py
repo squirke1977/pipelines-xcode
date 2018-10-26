@@ -10,7 +10,12 @@ print(build_dir)
 working_directory = build_dir + "/installapplications/"
 output_directory = build_dir + "/installapplications/payload/Library/LaunchDaemons/"
 
+print(working_directory)
+
 what = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+working_directory = what + "/installapplications/"
+
 
 print(working_directory)
 print(output_directory)
