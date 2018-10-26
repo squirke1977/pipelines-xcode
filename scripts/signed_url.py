@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from jinja2 import *
+import jinja2
 import os
 
 build_dir = os.environ.get("AGENT_BUILDDIRECTORY")
