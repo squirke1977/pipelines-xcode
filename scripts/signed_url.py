@@ -15,8 +15,10 @@ print(output_directory)
 
 templateLoader = jinja2.FileSystemLoader(searchpath=working_directory)
 templateEnv = jinja2.Environment(loader=templateLoader)
-#template = templateEnv.get_template("com.erikng.installapplications.template")
+template = templateEnv.get_template("com.erikng.installapplications.template")
 filename = output_directory + "com.erikng.installapplications.plist"
+
+print(filename)
 
 outputfile = open(filename, 'w')
 complete = template.render({"bootstrap_url":os.environ.get("SIGNED_URL")})
