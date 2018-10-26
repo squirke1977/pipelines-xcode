@@ -3,6 +3,10 @@
 import jinja2
 import os
 
+var = os.environ.get("SIGNED_URL")
+
+print(var)
+
 build_dir = os.environ.get("AGENT_BUILDDIRECTORY")
 
 print(build_dir)
