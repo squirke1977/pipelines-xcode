@@ -3,6 +3,10 @@
 import jinja2
 import os
 
+var = os.environ.get("SIGNED_URL")
+
+print(var)
+
 build_dir = os.environ.get("AGENT_BUILDDIRECTORY")
 
 print(build_dir)
@@ -29,7 +33,7 @@ filename = output_directory + "com.erikng.installapplications.plist"
 
 print(filename)
 
-outputfile = open(filename, 'w')
-complete = template.render({"bootstrap_url":os.environ.get("SIGNED_URL")})
+outputfile = open(filename, 'w+')
+complete = template.render({"bootstrap_file_url":os.environ.get("SIGNED_URL")})
 outputfile.write(complete)
 outputfile.close()
