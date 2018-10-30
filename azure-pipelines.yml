@@ -10,8 +10,8 @@ steps:
 - task: DownloadSecureFile@1
   displayName: 'Work damn you, work.'
   inputs:
-#    secureFile: '49a97838-a414-4eb5-bc3a-42359a3c51cb'
-    secureFile: 'nofile.txt'
+    secureFile: '49a97838-a414-4eb5-bc3a-42359a3c51cb'
+#    secureFile: 'nofile.txt'
 
 - script: |
     python -m pip install --upgrade pip
