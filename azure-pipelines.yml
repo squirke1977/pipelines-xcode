@@ -8,7 +8,7 @@ pool:
 
 steps:
 - task: DownloadSecureFile@1
-  displayName 'Work damn you, work.'
+  displayName: 'Work damn you, work.'
   inputs:
     secureFile: 'money.gif'
 - script: |
